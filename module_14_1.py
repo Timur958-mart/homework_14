@@ -26,7 +26,8 @@ cursor.execute("SELECT username, email, age, balance FROM Users WHERE age != ?",
 
 users = cursor.fetchall()
 for user in users:
-    print(user)
+    username, email, age, balance = user
+    print(f"Имя: {username} | Почта: {email} | Возраст: {age} | Баланс: {balance}")
 
 connection.commit()
 connection.close()
